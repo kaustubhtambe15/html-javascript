@@ -1,0 +1,50 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("selection").value;
+            document.getElementById('demo').innerHTML = 'states of selelcted country are:  ' + x;
+            var y = '<option value="1">India</option><option value="2">uk</option><option value="3">us</option>';
+            document.getElementById("selection_states").innerHTML = y;
+        }
+
+        function mouseDown() {
+            document.getElementById("demo2").style.color = "red";
+        }
+
+        function mouseUp() {
+            document.getElementById("demo2").style.color = "green";
+        }
+
+        function dblClick() {
+            document.getElementById('demo3').innerHTML = " you double-click this text ";
+        }
+    </script>
+    <p>test for onchange event </p>
+    <p>select country</p>
+    <select id="selection" onchange="myFunction()">
+        <option value="1">India</option>
+        <option value="2">uk</option>
+        <option value="3">us</option>
+    </select>
+    <p>select states</p>
+    <select id="selection_states" onchange="">
+    </select>
+
+    <p id="demo">test click this text</p><br>
+    <p id="demo1" onselect="mySelection()"> test for onselect event </p><br>
+    <input type="text" value="Hello" onselect="mySelection()"><br><br>
+    <p>test for mousedown and mouseUp event </p>
+    <p id="demo2" onmousedown="mouseDown()" onmouseup="mouseUp()">hello click this text </p><br><br>
+    <p>test for double-click(ondblclick) event</p>
+    <p id="demo3" ondblclick="dblClick()">hello </p>
+
+
+
+</body>
+
+</html>

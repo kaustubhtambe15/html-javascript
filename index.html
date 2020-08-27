@@ -1,0 +1,110 @@
+<html>
+
+<head>
+    <title>
+        log In
+
+    </title>
+    <h1>Log In</h1>
+
+    <script>
+        function validation() {
+            var errors = "";
+            var x = document.forms["login"]["uname"].value;
+            if (x == "") {
+                errors = "name must be filled out";
+                // return false; //  to do : Find out why we need return false here
+            }
+
+            var x = document.forms["login"]["pass"].value;
+            if (x == "") {
+                errors += "\npass must be filled out";
+                //   to do : Find out why we need return false here
+            }
+            var x = document.forms["login"]["email"].value;
+            if (x == "") {
+                errors += "\nemail must be filled out";
+
+            }
+
+            if (errors !== "") {
+                alert(errors);
+                return false;
+                // return false; //  to do : Find out why we need return false here
+
+            }
+        }
+
+        function validate() {
+            var y = document.forms["login"]["uname"].value;
+            if (y == "") {
+                document.getElementById('errors').innerHTML = "name must be filled out";
+            }
+            if (y !== "") {
+                document.getElementById('errors').innerHTML = "";
+            }
+        }
+
+        function validations() {
+            var errors = "";
+            var z = document.forms["login"]["uname"].value;
+            if (z == "") {
+                errors = "name must be filled out";
+            }
+            var z = document.forms["login"]["pass"].value;
+            if (z == "") {
+                errors += "\npass must be filled out";
+            }
+            if (errors !== "") {
+                alert(errors);
+                return false;
+
+            }
+        }
+
+
+
+
+    </script>
+    <style>
+        #btn1 {
+            color: black;
+            height: 40px;
+            width: 30%;
+            background-color: white;
+            float: left;
+            padding: auto;
+        }
+
+        #omega {
+            color: white;
+            font-size: 15px;
+            height: 20px;
+            width: 10%;
+            background-color: red;
+            float: left;
+        }
+
+        #errors {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <form name="login" onsubmit="return validation()" method="POST" action="index.php">
+        <label for="uname"> UserName</label>
+        <input type="text" id="uname" name="username" /> <br><br>
+        <div id="errors"></div>
+        <label for="pass"> password </label>
+        <input type="text" id="pass" name="password" onfocus="validate()"> <br><br>
+        <label for="email" id="email" name="email"> Enter email</label>
+        <input type="email" id="email" onkeydown="validations()" />
+        <br><br>
+        <br>
+        <input type="submit" value="Submit">
+        <button onclick="validation()">Log In</button>
+    </form>
+</body>
+
+</html>

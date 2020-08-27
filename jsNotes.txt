@@ -1,0 +1,8 @@
+26/8/2020
+displayed. true/false.
+for all html element with same class can be combine..
+var x = document.getElementsByClassName("example");
+ 
+x[i].disabled =! check.checked;(no need for if else).
+
+

@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <script> true
+
+        function myFunction() {
+            var check = document.getElementById("myCheck");
+            var x = document.getElementById("myDiv");
+            if (check.checked == true) {
+                x.style.display = "none";
+            } else {
+                x.style.display = "";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>test for checkbox</h1>
+    <input type="checkbox" class="demo1" id="myCheck" onclick="myFunction()">
+    <div id="myDiv">
+        <label for="fname">First name:</label>
+        <input type="text" class="demo1" id="fname" name="fname" disabled><br><br>
+        <label for="lname">Last name:</label>
+        <input type="text" class="demo1" id="lname" name="lname" disabled><br><br>
+        <label for="myEmail">Enter email</label>
+        <input type="email" class="demo1" id="myEmail" disabled><br><br>
+        <label for="myNum">Enter your number</label>
+        <input type="number" class="demo1" id="myNum" disabled><br><br>
+        <button id="btn" class="demo1" onclick="myFunction()">check</button>
+        <p></p>
+    </div>
+</body>
+
+</html>
