@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localStorage</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <form class="box">
+                        <h1>Login</h1>
+                        <p class="text-muted"> Please enter your login and password!</p>
+                        <input type="text" id="name" name="" placeholder="Username">
+                        <!-- <input type="password" id="pass" name="" placeholder="Password"> -->
+                        <input type="submit" id="submit" name="" value="Login" href="#" onclick="savdata()">
+                        <div id="showdata">
+                            <strong>jjjhbjbjbj</strong>
+                        </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div id="result"></div>
+</body>
+
+<script>
+    // var name = document.getElementById("name").innerHTML;
+    // var pass = document.getElementById("pass").innerHTML;
+
+    function savdata() {
+        var name = document.getElementById("name").value;
+        // var pass = document.getElementById("pass").innerHTML;
+
+        if (typeof(Storage) !== "undefined") {
+            // Store
+            localStorage.setItem('key', 'name');
+            // Retrieve
+            (document.getElementById("showdata").innerHTML = localStorage.getItem('key'));
+            console.log(name);
+        } else {
+            document.getElementById("showdata").innerHTML = "Sorry, your browser does not support Web Storage...";
+        }
+    }
+</script>
+
+
+<script>
+    // Check browser support
+    if (typeof(Storage) !== "undefined") {
+        // Store
+        localStorage.setItem("lastname", "Smith");
+        // Retrieve
+        document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+    } else {
+        document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+    }
+</script>
+
+
+
+</html>
